@@ -4,7 +4,7 @@ Tags: kickstarter, indiegogo, ecommerce, shopping, preorder, credit card, crowdf
 Requires at least: 3.0.1
 Donation Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2JGUY2JBQSMVN
 Tested up to: 3.6
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
