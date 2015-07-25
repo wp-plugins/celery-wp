@@ -24,9 +24,10 @@ class CeleryPlugin {
   
   function wp_enqueue_scripts()
   {
-    wp_enqueue_script('celery-support', plugins_url('/assets/js/support.js', __FILE__));
+    wp_enqueue_script('jquery');
+//    wp_enqueue_script('celery-support', plugins_url('celery-wp/assets/js/support.js'));
     wp_enqueue_script('celery', 'https://www.trycelery.com/js/celery.js', null, null, true);
-    wp_enqueue_script('celery-progress', 'https://www.trycelery.com/js/progress-widget.js', null, null, true);
+//    wp_enqueue_script('celery-progress', 'https://www.trycelery.com/js/progress-widget.js', null, null, true);
   }
   
   function config_page_styles() {
@@ -143,7 +144,7 @@ class CeleryPlugin {
     if (empty($hook)) {
       $hook = $this->hook;
     }
-    $content = '<p>'.__("If you're in need of support for Celery and/or this plugin, please visit <a href='https://www.trycelery.com/faq'>our FAQ</a>.", 'celery').'</p>';
+    $content = '<p>'.__("If you're in need of support for Celery and/or this plugin, please visit <a href='http://help.trycelery.com/'>our help center</a>.", 'celery').'</p>';
     $this->postbox($this->hook.'support', __('Need Support?','celery'), $content);
   }
 
@@ -206,6 +207,7 @@ CONTENT;
     $atts = $this->fix($atts);
     if(!$content) $content = 'Order Now';
     $atts['data-celery'] = $atts['slug'];
+    $atts['data-celery-version'] = "v2";
     unset($atts['slug']);
     $e = new HtmlElement('button', $content);
     $e->set($atts);
@@ -234,6 +236,7 @@ CONTENT;
     $atts['data-celery'] = $atts['slug'];
     unset($atts['slug']);
     $atts['data-celery-type'] = 'embed';
+    $atts['data-celery-version'] = "v2";
     $e = new HtmlElement('div-inline');
     $e->set($atts);
     return $e->build();
@@ -247,7 +250,7 @@ CONTENT;
     $s = <<<SCRIPT
       <script>
         jQuery(function($) {
-          Celery.connect('{$selector}', '{$atts['slug']}');
+          WpCelery.connect('{$selector}', '{$atts['slug']}');
         });
       </script>
 SCRIPT;

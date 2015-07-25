@@ -24,8 +24,8 @@
 							<?php
 							wp_nonce_field( 'celery-config' );
 
-							$content = '<p>' . sprintf( __( 'Go to your %1$sCelery Dashboard%2$s and click the product you wish to use. Paste the Product Slug below. The "slug" is the last part of the product URL.', 'celery' ), '<a href="https://www.trycelery.com/dashboard/products">', '</a>' ) . '</p>';
-							$content .= '<p>Example: https://www.trycelery.com/dashboard/products/<b class="celery_example">my-first-product</b>';
+							$content = '<p>' . sprintf( __( 'Go to your %1$sCelery Dashboard%2$s and click the product you wish to use. Paste the Product Slug below. The "slug" is the last part of the product URL.', 'celery' ), '<a href="https://dashboard.trycelery.com/products">', '</a>' ) . '</p>';
+							$content .= '<p>Example: https://dashboard.trycelery.com/products/<b class="celery_example">55b30effc07bd603007dc2fa</b>';
 
 							$rows   = array();
 							$rows[] = array(

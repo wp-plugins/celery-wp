@@ -1,10 +1,11 @@
-var Celery = {
+var WpCelery = {
   connect: function(selector, slug)
   {
     var $ = jQuery;
-    Celery.whenAvailable('celery', function() {
+    WpCelery.whenAvailable('celery', function() {
       el = $(selector).get(0);
       el.setAttribute("data-celery", slug);
+      el.setAttribute("data-celery-version", "v2");
       celery.addEvent(el, "click", celery.load);
     });
   },

@@ -39,6 +39,7 @@
     </td>
     <td>[celery-inline slug="my-store-slug"]</td>
   </tr>
+  <!--
   <tr>
     <td>celery-progress</td>
     <td>Show a Celery progress bar for this preorder campaign.</td>
@@ -57,4 +58,5 @@
     </td>
     <td>[celery-connect slug="my-store-slug" selector="#my_button_element"]</td>
   </tr>
+  -->
 </table>
